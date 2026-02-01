@@ -1,5 +1,6 @@
 # Database configuration
 LAMPAPI/config.php
+backup.sql
 
 # PHP
 *.log
