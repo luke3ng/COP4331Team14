@@ -1,4 +1,7 @@
 <?php
+
+    require_once 'config.php';
+
     $inData = getRequestInfo();
 
     $search = trim($inData["search"] ?? "");
@@ -12,7 +15,7 @@
     // Partial match pattern 
     $q = "%" . $search . "%";
 
-    $conn = new mysqli("localhost", "User", "rR32h@1khlL", "COP4331");
+    $conn = getDBConnection();
     if ($conn->connect_error)
     {
         returnWithError($conn->connect_error);

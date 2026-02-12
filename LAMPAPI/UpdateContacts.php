@@ -1,16 +1,25 @@
 <?php
 
     require_once 'config.php';
-    
+
     $inData = getRequestInfo();
 
-
-    $userId    = $inData["userId"] ?? 0;
     $contactId = $inData["contactId"] ?? 0;
+    $userId    = $inData["userId"] ?? 0;
+    $firstName = trim($inData["firstName"] ?? "");
+    $lastName  = trim($inData["lastName"] ?? "");
+    $phone     = trim($inData["phone"] ?? "");
+    $email     = trim($inData["email"] ?? "");
 
     if ($userId <= 0 || $contactId <= 0)
     {
         returnWithError("Missing or invalid userId or contactId");
+    }
+
+    // At least one field should be provided for update
+    if ($firstName === "" && $lastName === "" && $phone === "" && $email === "")
+    {
+        returnWithError("At least one field must be provided for update");
     }
 
     $conn = getDBConnection();
@@ -19,12 +28,12 @@
         returnWithError("DB connect error: " . $conn->connect_error);
     }
 
-    // Delete using BOTH contactId AND userId
-    // This prevents a user from deleting another user's contact
-
+    // Update contact using BOTH contactId AND userId
+    // This prevents a user from updating another user's contact
     $stmt = $conn->prepare(
-        "DELETE FROM contacts
-        WHERE ID = ? AND UserID = ?"
+        "UPDATE contacts 
+         SET FirstName = ?, LastName = ?, Phone = ?, Email = ?
+         WHERE ID = ? AND UserID = ?"
     );
 
     if (!$stmt)
@@ -33,7 +42,7 @@
         returnWithError("Prepare failed: " . $conn->error);
     }
 
-    $stmt->bind_param("ii", $contactId, $userId);
+    $stmt->bind_param("ssssii", $firstName, $lastName, $phone, $email, $contactId, $userId);
 
     if (!$stmt->execute())
     {
@@ -44,12 +53,11 @@
     }
 
     // If affected_rows == 0: contact doesn't exist OR belongs to a different user
-
     if ($stmt->affected_rows === 0)
     {
         $stmt->close();
         $conn->close();
-        returnWithError("No contact deleted (not found or not authorized)");
+        returnWithError("No contact updated (not found or not authorized)");
     }
 
     $stmt->close();
