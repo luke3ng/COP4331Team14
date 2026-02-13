@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Contacts</title>
+  <link rel="stylesheet" href="contacts.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>My Contacts</h1>
+    </header>
+
+    <main class="layout">
+      <!--Left column-->
+      <div class="left-column">
+
+        <!--Search-->
+        <section class="card">
+          <h2>Search Contacts</h2>
+          <div class="search-row">
+            <input
+                type="text"
+                id="searchInput"
+                class="search-input"
+                placeholder="Search by name, email, or phone"
+            />
+            <button id="searchButton">Search</button>
+            </div>
+        </section>
+
+        <!--Add Contact Dropdown-->
+        <section class="card">
+          <button id="toggleAddContact" class="dropdown-toggle">
+            Add New Contact <span class="arrow">▾</span>
+          </button>
+
+
+          <form id="addContactForm" class="contact-form hidden">
+            <div class="form-row">
+              <input type="text" id="firstName" placeholder="First Name" required />
+              <input type="text" id="lastName" placeholder="Last Name" required />
+            </div>
+
+            <div class="form-row">
+              <input type="email" id="email" placeholder="Email" />
+              <input type="tel" id="phone" placeholder="Phone Number" />
+            </div>
+
+            <button type="submit">Add Contact</button>
+          </form>
+        </section>
+
+      </div>
+
+      <!--Right column-->
+      <div class="right-column">
+        <section class="card">
+          <h2>Contacts List</h2>
+
+          <table class="contacts-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="contactsTableBody">
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="deleteModal" class="modal-overlay hidden">
+  <div class="modal-card">
+    <h3>Delete Contact?</h3>
+    <p>Are you sure you want to delete <span id="deleteContactName"></span>?</p>
+    <div class="modal-actions">
+      <button id="confirmDeleteBtn" class="delete-confirm-btn">Yes, Delete</button>
+      <button id="cancelDeleteBtn" class="cancel-btn">No, Keep It</button>
+    </div>
+  </div>
+</div>
+
+  <script src="contacts.js"></script>
+</body>
+</html>
+
