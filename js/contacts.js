@@ -269,6 +269,12 @@ searchInput.addEventListener("keypress", (e) => {
     renderContactsTable(initialContacts);
 })();
 
+document.getElementById("logoutBtn").onclick = () => {
+    localStorage.clear(); 
+
+    window.location.href = "login.html"; 
+};
+
 
 
 

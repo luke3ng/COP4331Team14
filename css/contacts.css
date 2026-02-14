@@ -4,8 +4,28 @@
 }
 
 body {
-  margin: 0;
-  background-color: #90b5f6;
+    margin: 0;
+    min-height: 100vh;
+    /* Layer 1 (Coral) is first, Layer 2 (Water) is second */
+    background-image: url('coral-reef-png_42148170.png'), url('pexels-jaymantri-5412.jpg');
+    
+    /* Matching settings for both images in order */
+    background-position: bottom center, center;
+    background-repeat: repeat-x, no-repeat;
+    background-size: auto 150px, cover; /* Coral is 150px tall, Water covers screen */
+    background-attachment: fixed, fixed;
+}
+
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #EDE8D0;
+    color: #00609f;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
 }
 
 .container {
@@ -39,7 +59,7 @@ header {
   background-color: #EDE8D0;
   padding: 20px;
   border-radius: 6px;
-  color: #4566de;
+  color: #00609f;
 }
 
 /* Search */
@@ -91,7 +111,7 @@ button {
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0px, 3px, 4px;
-  background-color: #4566de;
+  background-color: #00609f;
   color: #EDE8D0;
 }
 
@@ -110,7 +130,7 @@ button {
 }
 
 .contacts-table th {
-  background-color: #4566de;
+  background-color: #00609f;
   color: #EDE8D0;
 }
 
@@ -146,7 +166,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #4566de;
+  color: #00609f;
 }
 
 .arrow {
@@ -156,7 +176,7 @@ button {
 /* Rotate arrow when dropdown is open */
 .dropdown-open .arrow {
   transform: rotate(180deg);
-  color: #4566de
+  color: #00609f
 }
 
 /* Inline Edit Styling */
@@ -215,5 +235,6 @@ button {
   background-color: #d9534f;
   color: white;
 }
+
 
 

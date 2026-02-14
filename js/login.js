@@ -165,3 +165,14 @@ function toggleForms()
         signupForm.classList.toggle('hidden');
     }
 }
+
+//Connects login to contacts page
+if (data.id > 0) {
+    localStorage.setItem("userId", data.id);
+    localStorage.setItem("firstName", data.firstName);
+    localStorage.setItem("lastName", data.lastName);
+
+    window.location.href = "contacts.html"; 
+} else {
+    document.getElementById("loginResult").innerHTML = "User/Password incorrect";
+}
