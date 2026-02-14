@@ -44,7 +44,7 @@ function doLogin()
 
 				saveCookie();
 	
-				window.location.href = "color.html";
+				window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -96,7 +96,7 @@ function doSignup()
                 lastName = jsonObject.lastName;
                 
                 saveCookie();
-                window.location.href = "color.html";
+                window.location.href = "contacts.html";
             }
         };
         xhr.send(jsonPayload);
@@ -164,15 +164,4 @@ function toggleForms()
         loginForm.classList.toggle('hidden');
         signupForm.classList.toggle('hidden');
     }
-}
-
-//Connects login to contacts page
-if (data.id > 0) {
-    localStorage.setItem("userId", data.id);
-    localStorage.setItem("firstName", data.firstName);
-    localStorage.setItem("lastName", data.lastName);
-
-    window.location.href = "contacts.html"; 
-} else {
-    document.getElementById("loginResult").innerHTML = "User/Password incorrect";
 }
