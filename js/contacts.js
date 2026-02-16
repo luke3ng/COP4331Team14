@@ -1,4 +1,5 @@
 
+const userId = localStorage.getItem("userId");
 // Toggle Add Contact dropdown
 const toggleButton = document.getElementById("toggleAddContact");
 const addContactForm = document.getElementById("addContactForm");
