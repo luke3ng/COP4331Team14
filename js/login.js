@@ -94,9 +94,23 @@ function doSignup()
                 userId = jsonObject.id;
                 firstName = jsonObject.firstName;
                 lastName = jsonObject.lastName;
+
+				if (userId > 0) {
+                	//Added to save data to the contacts page (nikki)
+        			localStorage.setItem("userId", userId);
+        			localStorage.setItem("firstName", jsonObject.firstName);
+        			localStorage.setItem("lastName", jsonObject.lastName);
+
+        			//Added to redirect the page
+        			window.location.href = "contacts.html"; 
+
+					//Only saves on successful login
+					saveCookie();
+    			} else {
+       		    	document.getElementById("loginResult").innerHTML = "User/Password incorrect";
+    			}
                 
-                saveCookie();
-                window.location.href = "contacts.html";
+                //window.location.href = "contacts.html";
             }
         };
         xhr.send(jsonPayload);
