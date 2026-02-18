@@ -42,6 +42,11 @@ function doLogin()
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
 
+				//Added to fix login saving user info (nikki)
+				localStorage.setItem("userId", userId);
+                localStorage.setItem("firstName", firstName);
+                localStorage.setItem("lastName", lastName);
+
 				saveCookie();
 	
 				window.location.href = "contacts.html";
