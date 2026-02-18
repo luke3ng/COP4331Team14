@@ -61,6 +61,7 @@ function doLogin()
 
 }
 
+
 function doSignup() 
 {
     let fname = document.getElementById("signup-fname").value;
@@ -93,7 +94,7 @@ function doSignup()
                     return;
                 }
 
-                alert("Account created! Logging you in...");
+                //alert("Account created! Logging you in...");
                 
                 // Auto-login after successful signup
                 userId = jsonObject.id;
