@@ -1,27 +1,47 @@
-/* General Reset */
-body, html {
+/* 1. Global Styles & Background */
+body {
     margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Shared Background Gradient */
-.bg-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Background Images */
+    background-image: url('coral-reef-png_42148170.png'), url('pexels-jaymantri-5412.jpg');
+    background-position: bottom center, center;
+    background-repeat: repeat-x, no-repeat;
+    background-size: auto 150px, cover; 
+    background-attachment: fixed, fixed;
 }
 
-/* Form Container */
+/* 2. Text styling for Index/Hero page */
+.hero-content {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: -1px; /* Makes large text look a bit cleaner */
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    opacity: 1; 
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
 .form-container {
     background: white;
+    margin-top: 100px; /* Gives the logo space before the Welcome text starts */
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     width: 100%;
     max-width: 400px;
     color: #333;
@@ -52,21 +72,48 @@ input {
     box-sizing: border-box;
 }
 
-.submit-btn {
-    width: 100%;
-    background: #764ba2;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 1rem;
+/* 1. Base Button Styles (Common to both) */
+.submit-btn, .login-btn {
+    display: inline-block;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s;
+    border: none;
+    font-family: inherit;
+}
+
+/* 2. Index Page "Hero" Button (The one with the coral background) */
+.login-btn {
+    background-color: white;
+    color: #00609f;
+    padding: 15px 40px;
+    font-weight: bold;
+    border-radius: 30px; /* Pill shape */
+    font-size: 1.1rem;
+    margin-top: 20px;
+    width: auto; /* Prevents it from being huge */
+}
+
+.login-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 3. Login/Signup Page Buttons (Inside the white form) */
+.submit-btn {
+    width: 100%; /* Stretches to fill the white box */
+    background: #00609f;
+    color: white;
+    padding: 12px;
+    border-radius: 8px; /* Blockier shape */
+    font-size: 1rem;
     margin-top: 10px;
-    transition: background 0.3s;
 }
 
 .submit-btn:hover {
-    background: #5a3682;
+    background: #00609f;
+    transform: translateY(-2px); /* Subtle lift for the form button */
 }
 
 .toggle-link {
@@ -77,11 +124,32 @@ input {
 }
 
 .toggle-link span {
-    color: #667eea;
+    color: #4E69E4;
     cursor: pointer;
     font-weight: bold;
 }
 
 .hidden {
     display: none;
+}
+
+/* Logo Styling */
+.logo-container {
+    position: absolute; /* Keeps it at the top regardless of centering */
+    top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100; /* Ensures it stays above background elements */
+}
+
+.logo-container img {
+    width: 200px; /* Adjust this to make the logo bigger or smaller */
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds depth */
+    transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+    transform: scale(1.1); /* Fun little pop when you hover */
 }
