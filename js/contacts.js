@@ -266,6 +266,19 @@ searchInput.addEventListener("keypress", (e) => {
 
 //This runs as soon as the script loads
 (async () => {
+    if (!userId) {
+        window.location.href = "index.html";
+        return;
+    }
+
+    //Display the First Name
+    const firstName = localStorage.getItem("firstName");
+    const nameDisplay = document.getElementById("user-display-name");
+    if (firstName && nameDisplay) {
+        nameDisplay.textContent = firstName;
+    }
+
+    //Load the initial contacts table
     const initialContacts = await getContacts(userId);
     renderContactsTable(initialContacts);
 })();
