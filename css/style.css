@@ -9,11 +9,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
     /* Background Images */
-    background-image: url('coral-reef-png_42148170.png'), url('pexels-jaymantri-5412.jpg');
-    background-position: bottom center, center;
-    background-repeat: repeat-x, no-repeat;
-    background-size: auto 150px, cover; 
-    background-attachment: fixed, fixed;
+    background-image:url('AussieReefsBackground.jpg');
+    background-size: cover;
 }
 
 /* 2. Text styling for Index/Hero page */
@@ -51,7 +48,7 @@ body {
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #444;
+    color: #0850b4;
 }
 
 .input-group {
@@ -87,7 +84,7 @@ input {
 /* 2. Index Page "Hero" Button (The one with the coral background) */
 .login-btn {
     background-color: white;
-    color: #00609f;
+    color: #0850b4;
     padding: 15px 40px;
     font-weight: bold;
     border-radius: 30px; /* Pill shape */
@@ -104,7 +101,7 @@ input {
 /* 3. Login/Signup Page Buttons (Inside the white form) */
 .submit-btn {
     width: 100%; /* Stretches to fill the white box */
-    background: #00609f;
+    background: #0850b4;
     color: white;
     padding: 12px;
     border-radius: 8px; /* Blockier shape */

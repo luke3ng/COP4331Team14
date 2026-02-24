@@ -1,30 +1,11 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    background-image:url('pexels-jaymantri-5412.jpg')
-}
-
-.corner-coral {
-    position: fixed;   /* Sticks them to the screen even when scrolling */
-    bottom: 0;         /* Pins them to the bottom */
-    width: 200px;
-    height: auto;
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0.9;
-}
-
-.corner-coral.left {
-    left: 0;
-}
-
-.corner-coral.right {
-    right: 0;
+    background-image:url('AussieReefsBackground.jpg');
+    background-size: cover;
 }
 
 .container {
@@ -38,7 +19,12 @@ body {
     justify-content: space-between; /* Pins left to left, center to center, right to right */
     align-items: center;           /* Vertically centers all three items */
     padding: 20px 40px;
-    color: #EDE8D0;
+    color: #0850b4;
+    font-size: large;
+    /*background-color: rgba(168, 249, 246, 0.9);*/
+    background-color: rgba(201, 251, 250, 0.9);
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 /* Force the center title to be perfectly centered regardless of logo size */
@@ -63,10 +49,10 @@ body {
 
 .logout-button {
     position: static;
-    background-color: #EDE8D0;
-    color: #00609f;
+    background-color: #0850b4;
+    color: #a8f9f6;
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     border: none;
 }
@@ -91,10 +77,10 @@ body {
 
 /* Cards */
 .card {
-  background-color: #EDE8D0;
+  background-color: rgba(201, 251, 250, 0.9);
   padding: 20px;
   border-radius: 6px;
-  color: #00609f;
+  color: #0850b4;
 }
 
 /* Search */
@@ -169,7 +155,7 @@ body {
 
 input {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #a8f9f6;
   border-radius: 4px;
 }
 
@@ -180,8 +166,9 @@ button {
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0px, 3px, 4px;
-  background-color: #00609f;
-  color: #EDE8D0;
+  background-color: #0850b4;
+  color: #a8f9f6;
+  font-size: 14px;
 }
 
 /* Table */
@@ -195,12 +182,12 @@ button {
 .contacts-table td {
   padding: 10px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #a8f9f6;
 }
 
 .contacts-table th {
-  background-color: #00609f;
-  color: #EDE8D0;
+  background-color: #0850b4;
+  color: #a8f9f6;
 }
 
 /* Actions */
@@ -229,13 +216,14 @@ button {
 
 .search-row button {
   white-space: nowrap;
+  border-radius: 30px;
 }
 
 .dropdown-toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #00609f;
+  color: #0850b4;
 }
 
 .arrow {
@@ -245,7 +233,7 @@ button {
 /* Rotate arrow when dropdown is open */
 .dropdown-open .arrow {
   transform: rotate(180deg);
-  color: #00609f
+  color: #0850b4;
 }
 
 /* Inline Edit Styling */
@@ -284,7 +272,7 @@ button {
 
 /* The actual "Popup" card */
 .modal-card {
-  background: #EDE8D0;;
+  background: #a8f9f6;
   padding: 25px;
   border-radius: 8px;
   text-align: center;
