@@ -20,7 +20,7 @@ body {
 .hero-content {
     text-align: center;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
     letter-spacing: -1px; /* Makes large text look a bit cleaner */
 }
 
@@ -38,7 +38,8 @@ body {
 
 .form-container {
     background: white;
-    margin-top: 100px; /* Gives the logo space before the Welcome text starts */
+    margin-top: 0px; /* Gives the logo space before the Welcome text starts */
+    padding-top: 20px;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
@@ -135,12 +136,11 @@ input {
 
 /* Logo Styling */
 .logo-container {
-    position: absolute; /* Keeps it at the top regardless of centering */
-    top: 15px;
-    width: 100%;
+    /* REMOVE position: absolute and top: 100px */
+    margin-bottom: 20px; /* This creates a safe gap between logo and form */
     display: flex;
     justify-content: center;
-    z-index: 100; /* Ensures it stays above background elements */
+    width: 100%;
 }
 
 .logo-container img {
